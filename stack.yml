@@ -13,6 +13,8 @@ services:
   derivatives:
   - name: sshd
     service: php-laravel-sshd
+  - name: queue
+    service: php-laravel-queue
   volumes:
   - name: files
     size: 50
