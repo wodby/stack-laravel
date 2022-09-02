@@ -20,15 +20,6 @@ services:
   - name: db
     service: mariadb
 
-derivatives:
-- name: php-laravel-queue
-  icon: laravel
-  title: Laravel Queue
-  args: ['php', 'artisan', 'queue:listen']
-  type: service
-  default: true
-  required: false
-
 - name: nginx
   title: Nginx
   service: nginx-laravel
