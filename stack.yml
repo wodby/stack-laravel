@@ -20,6 +20,15 @@ services:
   - name: db
     service: mariadb
 
+derivatives:
+- name: php-laravel-queue
+  icon: laravel
+  title: Laravel Queue
+  args: ['php', 'artisan', 'queue:listen']
+  type: service
+  default: true
+  required: false
+
 - name: nginx
   title: Nginx
   service: nginx-laravel
@@ -30,11 +39,28 @@ services:
 
 - name: mariadb
   title: MariaDB
+  required: true  
   service: mariadb
   volumes:
   - name: data
     size: 20   
-    
+
+- name: mariadb-cloud
+  title: Cloud MariaDB
+  service: mariadb-cloud
+  disabled: true
+  options:
+  - version: '10.3'
+
+- name: mysql-cloud
+  title: Cloud MySQL
+  service: mysql-cloud
+  disabled: true
+  options:
+  - version: '5.7'
+  - version: '8'
+
 - name: redis
+  required: false
   title: Redis
   service: redis
