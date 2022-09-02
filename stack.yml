@@ -1,0 +1,40 @@
+name: laravel
+icon: laravel
+title: Laravel
+
+services:
+- name: php
+  title: PHP
+  service: php-laravel
+  required: true
+  options:
+  - version: '8.1'
+    default: true
+  derivatives:
+  - name: sshd
+    service: php-laravel-sshd
+  volumes:
+  - name: files
+    size: 50
+  links:
+  - name: db
+    service: mariadb
+
+- name: nginx
+  title: Nginx
+  service: nginx-laravel
+  required: true
+  links:
+  - name: backend
+    service: php
+
+- name: mariadb
+  title: MariaDB
+  service: mariadb
+  volumes:
+  - name: data
+    size: 20   
+    
+- name: redis
+  title: Redis
+  service: redis
