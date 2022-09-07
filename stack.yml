@@ -5,16 +5,16 @@ title: Laravel
 services:
 - name: php
   title: PHP
-  service: php-laravel
+  service: laravel-php
   required: true
   options:
   - version: '8.1'
     default: true
   derivatives:
   - name: sshd
-    service: php-laravel-sshd
+    service: laravel-php-sshd
   - name: queue
-    service: php-laravel-queue
+    service: laravel-php-queue
   volumes:
   - name: files
     size: 50
@@ -24,7 +24,7 @@ services:
 
 - name: nginx
   title: Nginx
-  service: nginx-laravel
+  service: laravel-nginx
   required: true
   links:
   - name: backend
@@ -38,16 +38,16 @@ services:
   - name: data
     size: 20   
 
-- name: mariadb-cloud
+- name: cloud-mariadb
   title: Cloud MariaDB
-  service: mariadb-cloud
+  service: cloud-mariadb
   disabled: true
   options:
   - version: '10.3'
 
-- name: mysql-cloud
+- name: cloud-mysql
   title: Cloud MySQL
-  service: mysql-cloud
+  service: cloud-mysql
   disabled: true
   options:
   - version: '5.7'
