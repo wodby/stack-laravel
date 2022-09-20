@@ -21,6 +21,8 @@ services:
   links:
   - name: db
     service: mariadb
+  - name: redis
+    service: redis
 
 - name: nginx
   title: Nginx
