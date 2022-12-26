@@ -16,7 +16,7 @@ services:
   - name: queue
     service: laravel-php-queue
   volumes:
-  - name: files
+  - name: storage
     size: 20
   links:
   - name: db
@@ -39,6 +39,13 @@ services:
   volumes:
   - name: data
     size: 10   
+
+- name: storage-nfs
+  title: Storage NFS
+  service: nfs-ganesha
+  volumes:
+  - name: export
+    size: 25
 
 - name: cloud-mariadb
   title: Cloud MariaDB
