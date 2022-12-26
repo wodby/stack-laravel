@@ -17,7 +17,7 @@ services:
     service: laravel-php-queue
   volumes:
   - name: files
-    size: 50
+    size: 20
   links:
   - name: db
     service: mariadb
@@ -38,7 +38,7 @@ services:
   service: mariadb
   volumes:
   - name: data
-    size: 20   
+    size: 10   
 
 - name: cloud-mariadb
   title: Cloud MariaDB
