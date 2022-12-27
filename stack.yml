@@ -23,6 +23,8 @@ services:
     service: mariadb
   - name: redis
     service: redis
+  - name: storage
+    service: storage-nfs
 
 - name: nginx
   title: Nginx
