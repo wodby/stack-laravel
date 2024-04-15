@@ -44,9 +44,9 @@ services:
   - name: data
     size: 10   
 
-- name: storage-nfs
-  title: Storage NFS
-  service: nfs-ganesha
+- name: files-storage
+  title: Files storage
+  service: nfs-provisioner
   volumes:
   - name: export
     size: 25
