@@ -10,8 +10,6 @@ services:
   options:
   - version: '8.3'
     default: true
-  - version: '8.2'
-  - version: '8.1'
   derivatives:
   - name: sshd
     service: laravel-php-sshd
@@ -26,7 +24,7 @@ services:
   - name: redis
     service: redis
   - name: storage
-    service: storage-nfs
+    service: files-storage
 
 - name: nginx
   title: Nginx
