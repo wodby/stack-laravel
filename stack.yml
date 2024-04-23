@@ -24,7 +24,7 @@ services:
   - name: redis
     service: redis
   - name: storage
-    service: files-storage
+    service: files-nfs
 
 - name: nginx
   title: Nginx
@@ -42,8 +42,8 @@ services:
   - name: data
     size: 10   
 
-- name: files-storage
-  title: Files storage
+- name: files-nfs
+  title: Files NFS storage
   service: nfs-provisioner
   volumes:
   - name: export
