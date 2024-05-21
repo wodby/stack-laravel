@@ -21,8 +21,8 @@ services:
   links:
   - name: db
     service: mariadb
-  - name: redis
-    service: redis
+  - name: valkey
+    service: valkey
   - name: storage
     service: files-nfs
 
@@ -49,6 +49,11 @@ services:
   - name: export
     size: 25
 
+- name: valkey
+  required: false
+  title: Valkey
+  service: valkey
+
 - name: cloud-mariadb
   title: Cloud MariaDB
   service: cloud-mariadb
@@ -63,8 +68,3 @@ services:
   options:
   - version: '5.7'
   - version: '8'
-
-- name: redis
-  required: false
-  title: Redis
-  service: redis
