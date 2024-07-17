@@ -21,10 +21,12 @@ services:
   links:
   - name: db
     service: mariadb
-  - name: valkey
+  - name: redis
     service: valkey
   - name: storage
     service: files-nfs
+  - name: sendmail
+    service: opensmtpd
 
 - name: nginx
   title: Nginx
@@ -53,6 +55,16 @@ services:
   required: false
   title: Valkey
   service: valkey
+
+- name: opensmtpd
+  required: false
+  title: OpenSMTPD
+  service: opensmtpd
+
+- name: gotenberg
+  required: false
+  title: Gotenberg
+  service: gotenberg
 
 - name: cloud-mariadb
   title: Cloud MariaDB
