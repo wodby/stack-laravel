@@ -26,7 +26,7 @@ services:
   - name: storage
     service: files-nfs
   - name: sendmail
-    service: opensmtpd
+    service: mailpit
 
 - name: nginx
   title: Nginx
@@ -56,8 +56,12 @@ services:
   title: Valkey
   service: valkey
 
+- name: mailpit
+  title: Mailpit
+  service: mailpit
+
 - name: opensmtpd
-  required: false
+  disabled: true
   title: OpenSMTPD
   service: opensmtpd
 
