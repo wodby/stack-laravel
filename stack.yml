@@ -51,10 +51,10 @@ services:
   - name: data
     size: 25
 
-- name: valkey
-  required: false
-  title: Valkey
-  service: valkey
+- name: redis
+  required: true
+  title: Redis
+  service: redis
 
 - name: mailpit
   title: Mailpit
@@ -66,6 +66,7 @@ services:
   service: opensmtpd
 
 - name: gotenberg
+  disabled: true
   required: false
   title: Gotenberg
   service: gotenberg
