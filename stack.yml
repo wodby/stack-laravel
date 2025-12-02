@@ -52,7 +52,7 @@ services:
     size: 25
 
 - name: redis
-  required: false
+  required: true
   title: Redis
   service: redis
 
