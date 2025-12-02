@@ -51,10 +51,10 @@ services:
   - name: data
     size: 25
 
-- name: redis
+- name: valkey
   required: true
-  title: Redis
-  service: redis
+  title: Valkey
+  service: valkey
 
 - name: mailpit
   title: Mailpit
