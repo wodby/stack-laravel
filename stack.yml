@@ -22,7 +22,7 @@ services:
   - name: db
     service: mariadb
   - name: redis
-    service: redis
+    service: valkey
   - name: storage
     service: files-nfs
   - name: sendmail
