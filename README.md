@@ -33,7 +33,7 @@ start with Wodby CI build configuration:
 
 | Component / service | Default configuration |
 | --- | --- |
-| PHP<br>`laravel-php` | required; enabled by default; versions: `8.5` by default; also available: `8.3`, `8.4`; volumes: `storage` 20 GB; links: `db` → `mariadb`, `redis` → `valkey`, `storage` → `files-nfs`, `sendmail` → `mailpit`; derivatives: `sshd` → `laravel-php-sshd`, `queue` → `laravel-php-queue` |
+| PHP<br>`laravel-php` | required; enabled by default; volumes: `storage` 20 GB; links: `db` → `mariadb`, `redis` → `valkey`, `storage` → `files-nfs`, `sendmail` → `mailpit`; derivatives: `sshd` → `laravel-php-sshd`, `queue` → `laravel-php-queue` |
 | Nginx<br>`laravel-nginx` | required; enabled by default; links: `backend` → `php` |
 | MariaDB<br>`mariadb` | required; enabled by default; volumes: `data` 10 GB |
 | Files NFS storage (`files-nfs`)<br>`nfs-provisioner` | optional; enabled by default; volumes: `data` 25 GB |
