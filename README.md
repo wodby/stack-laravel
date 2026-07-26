@@ -11,10 +11,10 @@ composition for Laravel.
 
 ## Start from a boilerplate
 
-Use one of the compatible boilerplates exposed by this stack's services to
-start with Wodby CI build configuration:
+Use the Wodby-maintained Laravel starter exposed by this stack's PHP service to
+start with a working application and its Wodby CI build configuration:
 
-- [Laravel Boilerplate](https://github.com/laravel/laravel)
+- [Laravel on Wodby](https://github.com/wodby/laravel-boilerplate)
 
 ## Service definitions
 
@@ -50,7 +50,8 @@ default. Required services cannot be excluded.
 
 ## Deploy this stack
 
-Start from [Laravel Boilerplate](https://github.com/laravel/laravel), or connect your own compatible source
+Start from [Laravel on Wodby](https://github.com/wodby/laravel-boilerplate),
+which includes `.wodby/pipeline.yml`, or connect your own compatible source
 repository.
 
 Review service versions, storage, links, and optional components when creating
