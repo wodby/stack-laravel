@@ -8,8 +8,6 @@ services:
   service: laravel-php
   required: true
   derivatives:
-  - name: sshd
-    service: laravel-php-sshd
   - name: queue
     service: laravel-php-queue
   volumes:
