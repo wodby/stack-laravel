@@ -5,14 +5,19 @@ Deploy Laravel applications on Kubernetes with Wodby.
 This repository defines the Wodby stack manifests and default service
 composition for Laravel.
 
+<!-- wodby:generated:start -->
+
+## Stack contract
+
+- [Laravel stack on Wodby](https://wodby.com/stacks/laravel)
 - [Browse Wodby application stacks](https://wodby.com/stacks)
 - [Wodby stack documentation](https://wodby.com/docs/2.0/stacks/)
 - [Stack manifest reference](https://wodby.com/docs/2.0/stacks/template/)
 
 ## Start from a boilerplate
 
-Use the Wodby-maintained Laravel starter exposed by this stack's PHP service to
-start with a working application and its Wodby CI build configuration:
+Use one of the compatible boilerplates exposed by this stack's services to
+start with Wodby CI build configuration:
 
 - [Laravel on Wodby](https://github.com/wodby/laravel-boilerplate)
 
@@ -33,20 +38,28 @@ start with a working application and its Wodby CI build configuration:
 
 | Component / service | Default configuration |
 | --- | --- |
-| PHP<br>`laravel-php` | required; enabled by default; volumes: `storage` 20 GB; links: `db` → `mariadb`, `redis` → `valkey`, `storage` → `files-nfs`, `sendmail` → `mailpit`; derivatives: `sshd` → `laravel-php-sshd`, `queue` → `laravel-php-queue` |
-| Nginx<br>`laravel-nginx` | required; enabled by default; links: `backend` → `php` |
+| PHP<br>`php` | required; enabled by default; volumes: `storage` 20 GB; links: `db` → `mariadb`, `redis` → `valkey`, `storage` → `files-nfs`, `sendmail` → `mailpit` |
+| Nginx<br>`nginx` | required; enabled by default; links: `backend` → `php` |
 | MariaDB<br>`mariadb` | required; enabled by default; volumes: `data` 10 GB |
-| Files NFS storage (`files-nfs`)<br>`nfs-provisioner` | optional; enabled by default; volumes: `data` 25 GB |
+| Files NFS storage<br>`files-nfs` | optional; enabled by default; volumes: `data` 25 GB |
 | Valkey<br>`valkey` | required; enabled by default |
 | Mailpit<br>`mailpit` | optional; enabled by default |
 | OpenSMTPD<br>`opensmtpd` | optional; disabled by default |
 | Gotenberg<br>`gotenberg` | optional; disabled by default |
-| Cloud MariaDB (`cloud-mariadb`)<br>`cloud-mariadb` | optional; disabled by default; versions: `10.3` by default |
-| Cloud MySQL (`cloud-mysql`)<br>`cloud-mysql` | optional; disabled by default; versions: `5.7` by default; also available: `8` |
+| Cloud MariaDB<br>`cloud-mariadb` | optional; disabled by default |
+| Cloud MySQL<br>`cloud-mysql` | optional; disabled by default |
 
 Enabled optional services are selected by default but can be excluded when an
 app is created. Disabled optional services are available but not selected by
 default. Required services cannot be excluded.
+
+## Validate the stack manifest
+
+```bash
+wodby stack validate-manifest stack.yml --org <org-id>
+```
+
+<!-- wodby:generated:end -->
 
 ## Deploy this stack
 
@@ -67,11 +80,3 @@ production environments.
 When replacing or renaming a stack service, update every related link target
 and derivative reference. Stack-local names and referenced service names are
 distinct identifiers.
-
-Validate the manifests with:
-
-```bash
-wodby stack validate-manifest stack.yml --org <org-id>
-```
-
-See the [stack manifest reference](https://wodby.com/docs/2.0/stacks/template/) and the [managed services index](https://github.com/wodby/services).
