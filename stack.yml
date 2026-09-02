@@ -35,6 +35,9 @@ services:
   title: MariaDB
   required: true  
   service: mariadb
+  tokens:
+  - name: db_backup_ignore_tables
+    value: 'cache;cache_locks'
   volumes:
   - name: data
     size: 10   
