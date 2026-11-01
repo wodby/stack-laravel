@@ -53,6 +53,9 @@ services:
   required: true
   title: Valkey
   service: valkey
+  env:
+  - name: VALKEY_MAXMEMORY_POLICY
+    value: noeviction
 
 - name: mailpit
   title: Mailpit
