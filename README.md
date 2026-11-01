@@ -42,7 +42,7 @@ start with Wodby CI build configuration:
 | Nginx<br>`nginx` | required; enabled by default; links: `backend` → `php` |
 | MariaDB<br>`mariadb` | required; enabled by default; volumes: `data` 10 GB |
 | Files NFS storage<br>`files-nfs` | optional; enabled by default; volumes: `data` 25 GB |
-| Valkey<br>`valkey` | required; enabled by default |
+| Valkey<br>`valkey` | required; enabled by default; volumes: `data` 5 GB |
 | Mailpit<br>`mailpit` | optional; enabled by default |
 | OpenSMTPD<br>`opensmtpd` | optional; disabled by default |
 | Gotenberg<br>`gotenberg` | optional; disabled by default |
