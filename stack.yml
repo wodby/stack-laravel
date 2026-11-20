@@ -2,6 +2,7 @@ name: laravel
 icon: laravel
 docs: https://wodby.com/docs/2.0/stacks/catalog/laravel/
 title: Laravel
+category: frameworks
 
 services:
 - name: php
