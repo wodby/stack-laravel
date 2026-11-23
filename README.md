@@ -34,12 +34,13 @@ start with Wodby CI build configuration:
 - [Gotenberg service](https://github.com/wodby/service-gotenberg)
 - [Cloud MariaDB service](https://github.com/wodby/service-cloud-mariadb)
 - [Cloud MySQL service](https://github.com/wodby/service-cloud-mysql)
+- [OpenTelemetry Collector service](https://github.com/wodby/service-opentelemetry-collector)
 
 ## What's included
 
 | Component / service | Default configuration |
 | --- | --- |
-| PHP<br>`php` | required; enabled by default; volumes: `storage` 20 GB; links: `db` → `mariadb`, `redis` → `valkey`, `storage` → `files-nfs`, `sendmail` → `mailpit` |
+| PHP<br>`php` | required; enabled by default; volumes: `storage` 20 GB; links: `db` → `mariadb`, `redis` → `valkey`, `storage` → `files-nfs`, `sendmail` → `mailpit`, `otel` → `otel-collector` |
 | Nginx<br>`nginx` | required; enabled by default; links: `backend` → `php` |
 | MariaDB<br>`mariadb` | required; enabled by default; volumes: `data` 10 GB |
 | Files NFS storage<br>`files-nfs` | optional; enabled by default; volumes: `data` 25 GB |
@@ -49,6 +50,7 @@ start with Wodby CI build configuration:
 | Gotenberg<br>`gotenberg` | optional; disabled by default |
 | Cloud MariaDB<br>`cloud-mariadb` | optional; disabled by default |
 | Cloud MySQL<br>`cloud-mysql` | optional; disabled by default |
+| OpenTelemetry Collector<br>`otel-collector` | optional; disabled by default |
 
 Enabled optional services are selected by default but can be excluded when an
 app is created. Disabled optional services are available but not selected by
